@@ -23,7 +23,7 @@ app.get("/", async (req: Request, res: Response) => {
   });
 });
 
-app.use('/products', productController)
+app.use('/products', productController);
 
 app.listen(port, () => {
   log(`Auth API started at http://127.0.0.1:${port}`);
