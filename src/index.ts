@@ -1,7 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { log } from "console";
 import productController from "./controllers/productController";
 
 dotenv.config();
@@ -26,5 +25,5 @@ app.get("/", async (req: Request, res: Response) => {
 app.use("/products", productController);
 
 app.listen(port, () => {
-  log(`Product API started at http://127.0.0.1:${port}`);
+  console.log(`Product API started at http://127.0.0.1:${port}`);
 });

@@ -1,7 +1,6 @@
 // src/controllers/productController.ts
 import express, { Request, Response } from "express";
 import Product from "../models/Product";
-import { where } from "sequelize";
 
 const router = express.Router();
 
@@ -19,7 +18,7 @@ router.get("/", async (req: Request, res: Response) => {
 router.post("/", async (req: Request, res: Response) => {
   try {
     const product = req.body;
-    const newProduct = await Product.create({
+    await Product.create({
       name: product?.name,
       inStock: product?.in_stock,
       category: product?.category,
