@@ -2,7 +2,7 @@ import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { log } from "console";
-import productController from './controllers/productController';
+import productController from "./controllers/productController";
 
 dotenv.config();
 
@@ -19,12 +19,12 @@ app.use(
 app.get("/", async (req: Request, res: Response) => {
   res.json({
     success: true,
-    message: "Node Product Service"
+    message: "Node Product Service",
   });
 });
 
-app.use('/products', productController);
+app.use("/products", productController);
 
 app.listen(port, () => {
-  log(`Auth API started at http://127.0.0.1:${port}`);
+  log(`Product API started at http://127.0.0.1:${port}`);
 });
